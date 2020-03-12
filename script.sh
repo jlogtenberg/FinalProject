@@ -22,13 +22,22 @@ function men_amount {
 	cut -d';' -f9
 }
 
-function search {
+function get_input {
 	echo 'Year (between 2005 and 2017):'
 	read YEAR
 	echo 'Education level (Vmbo/Havo/Vwo):'
 	read LEVEL
-	cat geslaagden_mannen.csv |\
-	grep "$YEAR" |\
+	echo 'Male graduates:' search geslaagden_mannen.csv $YEAR $LEVEL
+	echo 'Female graduates:'
+	search geslaagden_vrouwen.csv $YEAR $LEVEL
+}
+
+function search() {
+	FILE=$1
+	YEAR=$2
+	LEVEL=$3
+	cat $FILE |\
+	grep $YEAR |\
 	if [ $LEVEL == "Vmbo" ]
 	then
 		cut -d';' -f7
@@ -43,4 +52,4 @@ function search {
 	fi
 }
 
-search
+get_input
