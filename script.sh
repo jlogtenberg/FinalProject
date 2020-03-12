@@ -22,5 +22,25 @@ function men_amount {
 	cut -d';' -f9
 }
 
-women_amount
-men_amount
+function search {
+	echo 'Year (between 2005 and 2017):'
+	read YEAR
+	echo 'Education level (Vmbo/Havo/Vwo):'
+	read LEVEL
+	cat geslaagden_mannen.csv |\
+	grep "$YEAR" |\
+	if [ $LEVEL == "Vmbo" ]
+	then
+		cut -d';' -f7
+	elif [ $LEVEL == "Havo" ]
+	then
+		cut -d';' -f8
+	elif [ $LEVEL == "Vwo" ]
+	then
+		cut -d';' -f9
+	else
+		echo 'Not a valid year or education level.'
+	fi
+}
+
+search
