@@ -27,7 +27,8 @@ function get_input {
 	read YEAR
 	echo 'Education level (Vmbo/Havo/Vwo):'
 	read LEVEL
-	echo 'Male graduates:' search geslaagden_mannen.csv $YEAR $LEVEL
+	echo 'Male graduates:'
+	search geslaagden_mannen.csv $YEAR $LEVEL
 	echo 'Female graduates:'
 	search geslaagden_vrouwen.csv $YEAR $LEVEL
 }
