@@ -1,5 +1,5 @@
 ## Project
-This repository contains a script that can be used to investigate the graduates of three different education levels in a specific school year between 2005 and 2017.
+This repository contains a script that can be used to investigate the graduates of three different education levels in a specific school year between 2005 and 2017. Besides two files that contain the male and female graduates (geslaagden_mannen.csv and geslaagden_vrouwen.csv), this repository contains four files that specify the amount of males and femalese that were eligible to take part in the exams of 2016/'17 and 2017/'18.
 
 ## Motivation
 The project this repository is associated with aims to investigate the amount of male and female graduates in order to find out if gender as an impact on graduating.
